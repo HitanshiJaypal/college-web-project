@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>St. Mary University - Home</title>
+</head>
+<body>
+
+<header>
+    <h1>St. Mary University</h1>
+    <p>Excellence in Education and Innovation</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About University</a> |
+    <a href="departments.html">Departments</a> |
+    <a href="facilities.html">Facilities</a> |
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<main>
+    <h2>Welcome to St. Mary University</h2>
+    <p>
+        St. Mary University is committed to providing world-class education, fostering
+        innovation, research, and all-round development of students.
+    </p>
+    
+<section id="vision-mission">
+    <h2>Our Vision & Mission</h2>
+
+    <h3>Vision</h3>
+    <p><strong>To be a leading center of excellence in education, fostering innovation, research, and holistic development of students for a sustainable and progressive society.</strong></p>
+
+    <h3>Mission</h3>
+    <ul>
+        <li><strong>Provide high-quality education with modern infrastructure and technology.</strong></li>
+        <li><strong>Encourage research, critical thinking, and innovation among students and faculty.</strong></li>
+        <li><strong>Promote ethical values, social responsibility, and leadership skills.</strong></li>
+        <li><strong>Prepare students for global challenges and industry-ready careers.</strong></li>
+    </ul>
+</section>
+
+    <h3>Our Campus</h3>
+    <img src="college.jpg" alt="St. Mary University Campus" width="60%">
+
+    <h3>Campus Tour</h3>
+    <video id="campusVideo" controls width="60%">
+  <source src="college_campus.mp4" type="video/mp4">
+</video>
+
+<audio id="campusAudio" autoplay loop>
+  <source src="stmary_university_theme.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const video = document.getElementById("campusVideo");
+  const audio = document.getElementById("campusAudio");
+
+  // Play audio only when video is played
+  video.addEventListener("play", () => {
+    audio.play().catch(error => {
+      console.log("Audio play blocked by browser:", error);
+    });
+  });
+
+  // Pause audio when video is paused
+  video.addEventListener("pause", () => {
+    audio.pause();
+  });
+
+  // Reset audio when video ends
+  video.addEventListener("ended", () => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+</script>
+</main>
+
+<footer>
+    <p>© 2026 St. Mary University</p>
+</footer>
+
+</body>
+</html>
